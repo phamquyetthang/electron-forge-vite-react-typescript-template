@@ -9,6 +9,7 @@ import {
 } from '@/app/components/ui/card';
 import { Input } from '@/app/components/ui/input';
 import { Label } from '@/app/components/ui/label';
+// import { IPC_CHANNELS } from '@/ipc';
 
 export function LoginForm({
   className,
@@ -48,7 +49,13 @@ export function LoginForm({
                 <Input id="password" type="password" required />
               </div>
               <div className="flex flex-col gap-3">
-                <Button type="submit" className="w-full">
+                <Button
+                  type="button"
+                  onClick={() =>
+                    electron.ipcRenderer.send('alert', 'Login button clicked')
+                  }
+                  className="w-full"
+                >
                   Login
                 </Button>
                 <Button variant="outline" className="w-full">
