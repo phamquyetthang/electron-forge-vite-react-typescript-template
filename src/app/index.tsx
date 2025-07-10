@@ -1,13 +1,14 @@
 // # src/app.tsx
 
-import './style/index.css'; // import css
+import "./styles/index.css"; // import css
 
 import * as React from "react";
 import { createRoot } from "react-dom/client";
+import App from "./App";
 
-const root = createRoot(document.getElementById('root') as HTMLElement);
+const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <React.StrictMode>
-   <h1>Hello react</h1>
+    <App />
   </React.StrictMode>
 );
