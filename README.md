@@ -1,0 +1,1 @@
+# Electron + Vite + React Typescript + Tailwind v4 + Shadcn TEMPLATE
