@@ -52,7 +52,7 @@ export function LoginForm({
                 <Button
                   type="button"
                   onClick={() =>
-                    electron.ipcRenderer.send('alert', 'Login button clicked')
+                    electron.ipcRenderer.send('example', 'Login button clicked')
                   }
                   className="w-full"
                 >
