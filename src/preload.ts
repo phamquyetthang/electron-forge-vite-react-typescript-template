@@ -4,7 +4,7 @@ import {
   dialog,
   ipcRenderer,
 } from 'electron';
-import { IPC_CHANNELS } from './ipc';
+import { IPC_CHANNELS, STORE_CHANNELS } from './ipc';
 
 const versions: Record<string, unknown> = {};
 
@@ -70,6 +70,17 @@ export const globals = {
 
         return this;
       }
+    },
+  },
+  store: {
+    get(key: string) {
+      return ipcRenderer.sendSync(STORE_CHANNELS.STORE_GET, key);
+    },
+    set(property: string, val: unknown) {
+      ipcRenderer.send(STORE_CHANNELS.STORE_SET, property, val);
+    },
+    delete(key: string) {
+      return ipcRenderer.sendSync(STORE_CHANNELS.STORE_DELETE, key);
     },
   },
   dialog,
